@@ -1,18 +1,92 @@
+import { useState } from 'react';
+
 function ActivityForm() {
+  const [travel, setTravel] = useState([]);
+  const [newActivity, setNewActivity] = useState('');
+  const [date, setDate] = useState('');
+  const [place, setPlace] = useState('');
+
+  // Hantera aktivitetens namn
+  function handleActivityChange(event) {
+    setNewActivity(event.target.value);
+  }
+
+  // Hantera datum
+  function handleDateChange(event) {
+    setDate(event.target.value);
+  }
+
+  // Hantera plats
+  function handlePlaceChange(event) {
+    setPlace(event.target.value);
+  }
+
+  // Lägg till aktivitet i listan
+  function addActivity() {
+    event.preventDefault();
+
+    const newTravelItem = {
+      activity: newActivity,
+      date: date,
+      place: place,
+    };
+
+    // Lägg till ny travel item object i travel array
+    setTravel([...travel, newTravelItem]);
+
+    // Töm fälten
+    setNewActivity('');
+    setDate('');
+    setPlace('');
+  }
+
   return (
-    <div>
-      <form action=" " className="travel-form">
-        <input
-          type="text"
-          name="aktivitet"
-          id="aktivitet"
-          placeholder="Ange aktivitet"
-        />
-        <input type="date" name="datum" id="datum" />
-        <input type="text" name="plats" id="plats" placeholder="Ange plats" />
-        <button type="submit">Lägg till</button>
-      </form>
-    </div>
+    <>
+      <div>
+        <form className="travel-form" onSubmit={addActivity}>
+          <input
+            type="text"
+            name="aktivitet"
+            id="aktivitet"
+            placeholder="Ange aktivitet"
+            required
+            value={newActivity}
+            onChange={handleActivityChange}
+          />
+          <input
+            type="date"
+            name="datum"
+            id="datum"
+            required
+            value={date}
+            onChange={handleDateChange}
+          />
+          <input
+            type="text"
+            name="plats"
+            id="plats"
+            placeholder="Ange plats"
+            required
+            value={place}
+            onChange={handlePlaceChange}
+          />
+          <button type="submit">Lägg till</button>
+        </form>
+      </div>
+      <div>
+        <ul className="activity-list">
+          {travel.map((item, index) => {
+            return (
+              <li key={index}>
+                <h3 className="activity-title">{item.activity}</h3>
+                <p className="date-text">{item.date}</p>
+                <p className="place-text">{item.place}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </>
   );
 }
 

@@ -1,5 +1,11 @@
 function ActivityList() {
-  return <p>yo</p>;
+  // använd map
+
+  return (
+    <ul className="activity-list">
+      <li></li>
+    </ul>
+  );
 }
 
 export default ActivityList;
