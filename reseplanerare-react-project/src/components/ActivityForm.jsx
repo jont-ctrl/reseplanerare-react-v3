@@ -40,7 +40,7 @@ function ActivityForm() {
       place: place,
     };
 
-    // Lägg till ny travel item object i travel array
+    // Lägg till ny travel item object i travel array och updatera state
     setTravel([...travel, newTravelItem]);
 
     // Töm fälten
