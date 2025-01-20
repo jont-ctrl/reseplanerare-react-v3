@@ -53,10 +53,10 @@ button:active {
 }
 
 .activity-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .activity-item {
@@ -68,9 +68,20 @@ button:active {
   border-radius: 2rem;
   padding: 2rem;
   margin: 1rem;
+  flex-wrap: wrap;
   min-width: 250px;
 }
 
 .date-text {
   color: hsl(0, 0%, 30%);
+}
+
+.activity-title {
+  font-size: 1.35rem;
+}
+
+@media (max-width: 600px) {
+  .activity-list {
+    grid-template-columns: 1fr;
+  }
 }
