@@ -58,3 +58,19 @@ button:active {
   align-items: center;
   flex-direction: column;
 }
+
+.activity-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin: 1rem;
+  min-width: 250px;
+}
+
+.date-text {
+  color: hsl(0, 0%, 30%);
+}

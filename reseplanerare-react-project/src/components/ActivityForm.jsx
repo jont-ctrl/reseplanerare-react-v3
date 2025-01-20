@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ActivityList from './ActivityList';
 
 function ActivityForm() {
   const [travel, setTravel] = useState([]);
@@ -73,19 +74,8 @@ function ActivityForm() {
           <button type="submit">Lägg till</button>
         </form>
       </div>
-      <div>
-        <ul className="activity-list">
-          {travel.map((item, index) => {
-            return (
-              <li key={index}>
-                <h3 className="activity-title">{item.activity}</h3>
-                <p className="date-text">{item.date}</p>
-                <p className="place-text">{item.place}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+
+      <ActivityList travel={travel} />
     </>
   );
 }
