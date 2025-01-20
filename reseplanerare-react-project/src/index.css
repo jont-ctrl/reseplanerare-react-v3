@@ -1,9 +1,48 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: hsl(0, 0%, 96%);
+  padding: 1rem;
 }
 
 header {
   display: flex;
   justify-content: center;
+}
+
+.travel-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 250px;
+  margin: auto;
+}
+
+input {
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 2rem;
+  width: 100%;
+}
+
+button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  width: 100%;
+}
+
+button:hover {
+  background-color: hsl(0, 0%, 10%);
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: hsl(0, 0%, 20%);
+  transform: scale(0.95);
 }
