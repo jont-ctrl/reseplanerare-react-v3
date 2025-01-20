@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Två props
 function ActivityList({ travel, setTravel }) {
   function removeItem(index) {
     const updatedTravel = travel.filter((item, i) => i !== index);

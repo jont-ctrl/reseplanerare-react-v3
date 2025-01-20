@@ -24,6 +24,7 @@ function ActivityForm() {
     setPlace(event.target.value);
   }
 
+  // Hantera tid
   function handleTimeChange(event) {
     setNewTime(event.target.value);
   }
