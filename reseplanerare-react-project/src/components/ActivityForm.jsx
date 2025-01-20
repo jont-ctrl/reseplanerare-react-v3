@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ActivityList from './ActivityList';
 
 function ActivityForm() {
-  // [stateValue håller aktuella värdet, funktion för uppdatera], intialvalue
+  // [stateValue variable håller aktuella värdet, funktion för uppdatera], intialvalue
   const [travel, setTravel] = useState([]);
   const [newActivity, setNewActivity] = useState('');
   const [date, setDate] = useState('');
