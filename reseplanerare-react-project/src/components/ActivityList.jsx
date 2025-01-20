@@ -16,7 +16,10 @@ function ActivityList({ travel, setTravel }) {
               <h3 className="activity-title">{item.activity}</h3>
               <p className="place-text">{item.place}</p>
               <p className="date-text">{item.date}</p>
-              <button onClick={() => removeItem(index)}>Ta bort</button>
+              <button className="addBtn" onClick={() => removeItem(index)}>
+                <span class="material-icons-outlined">delete</span>
+                Ta bort
+              </button>
             </li>
           );
         })}

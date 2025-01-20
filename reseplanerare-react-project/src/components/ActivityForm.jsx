@@ -55,14 +55,6 @@ function ActivityForm() {
             onChange={handleActivityChange}
           />
           <input
-            type="date"
-            name="datum"
-            id="datum"
-            required
-            value={date}
-            onChange={handleDateChange}
-          />
-          <input
             type="text"
             name="plats"
             id="plats"
@@ -71,7 +63,19 @@ function ActivityForm() {
             value={place}
             onChange={handlePlaceChange}
           />
-          <button type="submit">Lägg till</button>
+          <input
+            type="date"
+            name="datum"
+            id="datum"
+            required
+            value={date}
+            onChange={handleDateChange}
+          />
+
+          <button type="submit" className="addBtn">
+            <span class="material-icons-outlined">add</span>
+            Lägg till
+          </button>
         </form>
       </div>
 

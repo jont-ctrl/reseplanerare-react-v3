@@ -1,11 +1,14 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', serif;
+  font-optical-sizing: auto;
+
   background-color: hsl(0, 0%, 96%);
   padding: 1rem;
 }
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', serif;
+  font-optical-sizing: auto;
 }
 
 header {
@@ -84,4 +87,14 @@ button:active {
   .activity-list {
     grid-template-columns: 1fr;
   }
+}
+
+.addBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-icons-outlined {
+  font-size: 1rem;
 }
