@@ -2,7 +2,7 @@ import React from 'react';
 
 function ActivityList({ travel, setTravel }) {
   function removeItem(index) {
-    const updatedTravel = travel.filter((_, i) => i !== index);
+    const updatedTravel = travel.filter((item, i) => i !== index);
     setTravel(updatedTravel);
   }
 
@@ -15,6 +15,7 @@ function ActivityList({ travel, setTravel }) {
             <li key={index} className="activity-item">
               <h3 className="activity-title">{item.activity}</h3>
               <p className="place-text">{item.place}</p>
+              <p className="time-text">{item.time}</p>
               <p className="date-text">{item.date}</p>
               <button className="addBtn" onClick={() => removeItem(index)}>
                 <span class="material-icons-outlined">delete</span>

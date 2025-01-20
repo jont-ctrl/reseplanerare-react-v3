@@ -76,7 +76,8 @@ button:active {
   min-width: 250px;
 }
 
-.date-text {
+.date-text,
+.time-text {
   color: hsl(0, 0%, 30%);
 }
 

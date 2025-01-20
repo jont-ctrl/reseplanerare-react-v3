@@ -2,9 +2,11 @@ import { useState } from 'react';
 import ActivityList from './ActivityList';
 
 function ActivityForm() {
+  // [stateValue håller aktuella värdet, funktion för uppdatera], intialvalue
   const [travel, setTravel] = useState([]);
   const [newActivity, setNewActivity] = useState('');
   const [date, setDate] = useState('');
+  const [newTime, setNewTime] = useState('');
   const [place, setPlace] = useState('');
 
   // Hantera aktivitetens namn
@@ -22,6 +24,10 @@ function ActivityForm() {
     setPlace(event.target.value);
   }
 
+  function handleTimeChange(event) {
+    setNewTime(event.target.value);
+  }
+
   // Lägg till aktivitet i listan
   function addActivity() {
     event.preventDefault();
@@ -29,6 +35,7 @@ function ActivityForm() {
     const newTravelItem = {
       activity: newActivity,
       date: date,
+      time: newTime,
       place: place,
     };
 
@@ -38,6 +45,7 @@ function ActivityForm() {
     // Töm fälten
     setNewActivity('');
     setDate('');
+    setNewTime('');
     setPlace('');
   }
 
@@ -62,6 +70,13 @@ function ActivityForm() {
             required
             value={place}
             onChange={handlePlaceChange}
+          />
+          <input
+            type="time"
+            name="time"
+            id="time"
+            value={newTime}
+            onChange={handleTimeChange}
           />
           <input
             type="date"
