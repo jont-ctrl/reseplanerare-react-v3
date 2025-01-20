@@ -60,6 +60,7 @@ button:active {
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
+  margin-top: 3rem;
 }
 
 .activity-item {

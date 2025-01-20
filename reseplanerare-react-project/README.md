@@ -23,4 +23,5 @@ npm run dev
 
 Fyll i fälten för aktivitetens namn, datum och plats.
 Klicka på "Lägg till" för att lägga till aktiviteten.
+Klicka på "Ta bort" för att ta bort en aktivitet.
 Alla tillagda aktiviteter visas i en lista.
