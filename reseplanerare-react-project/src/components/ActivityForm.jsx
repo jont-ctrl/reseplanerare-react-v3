@@ -75,7 +75,7 @@ function ActivityForm() {
         </form>
       </div>
 
-      <ActivityList travel={travel} />
+      <ActivityList travel={travel} setTravel={setTravel} />
     </>
   );
 }
