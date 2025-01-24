@@ -109,3 +109,17 @@ button:active {
   align-items: center;
   font-weight: bold;
 }
+
+.random-btn {
+  padding: 0.1rem 0.1rem;
+  font-size: 2rem;
+  background-color: hsl(0, 0%, 96%);
+}
+
+.random-btn:hover {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.random-btn:active {
+  background-color: hsl(0, 0%, 96%);
+}

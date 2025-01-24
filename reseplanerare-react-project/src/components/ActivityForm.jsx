@@ -9,6 +9,28 @@ function ActivityForm() {
   const [newTime, setNewTime] = useState('');
   const [place, setPlace] = useState('');
 
+  function handleRandomCity() {
+    const randomCityPick = [
+      'Stockholm',
+      'Göteborg',
+      'Malmö',
+      'Oslo',
+      'Köpenhamn',
+      'Helsingfors',
+      'Paris',
+      'New York',
+      'Tokyo',
+      'Berlin',
+      'London',
+      'Sydney',
+      'Dubai',
+      'Barcelona',
+      'Rom',
+    ];
+
+    setPlace(randomCityPick[Math.floor(Math.random() * randomCityPick.length)]);
+  }
+
   // Hantera aktivitetens namn
   function handleActivityChange(event) {
     setNewActivity(event.target.value);
@@ -71,6 +93,9 @@ function ActivityForm() {
           value={place}
           onChange={handlePlaceChange}
         />
+        <button onClick={handleRandomCity} className='random-btn'>
+          🔄
+        </button>
         <input
           type='time'
           name='time'
