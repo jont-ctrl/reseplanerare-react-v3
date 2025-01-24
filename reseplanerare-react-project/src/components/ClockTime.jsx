@@ -11,7 +11,7 @@ function ClockTime() {
 
   return (
     <>
-      <p className='clock-timer'>{time}</p>
+      <h3 className='clock-timer'>{time}</h3>
     </>
   );
 }
