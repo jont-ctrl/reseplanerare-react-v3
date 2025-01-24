@@ -102,3 +102,10 @@ button:active {
 .material-icons-outlined {
   font-size: 1rem;
 }
+
+.clock-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}

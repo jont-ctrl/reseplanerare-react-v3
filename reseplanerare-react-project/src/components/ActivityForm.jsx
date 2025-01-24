@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ActivityList from './ActivityList';
 
 function ActivityForm() {
@@ -52,43 +52,43 @@ function ActivityForm() {
 
   return (
     <>
-      <form className="travel-form" onSubmit={addActivity}>
+      <form className='travel-form' onSubmit={addActivity}>
         <input
-          type="text"
-          name="aktivitet"
-          id="aktivitet"
-          placeholder="Ange aktivitet"
+          type='text'
+          name='aktivitet'
+          id='aktivitet'
+          placeholder='Ange aktivitet'
           required
           value={newActivity}
           onChange={handleActivityChange}
         />
         <input
-          type="text"
-          name="plats"
-          id="plats"
-          placeholder="Ange plats"
+          type='text'
+          name='plats'
+          id='plats'
+          placeholder='Ange plats'
           required
           value={place}
           onChange={handlePlaceChange}
         />
         <input
-          type="time"
-          name="time"
-          id="time"
+          type='time'
+          name='time'
+          id='time'
           value={newTime}
           onChange={handleTimeChange}
         />
         <input
-          type="date"
-          name="datum"
-          id="datum"
+          type='date'
+          name='datum'
+          id='datum'
           required
           value={date}
           onChange={handleDateChange}
         />
 
-        <button type="submit" className="addBtn">
-          <span class="material-icons-outlined">add</span>
+        <button type='submit' className='addBtn'>
+          <span class='material-icons-outlined'>add</span>
           Lägg till
         </button>
       </form>
