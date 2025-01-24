@@ -8,6 +8,7 @@ function ActivityForm() {
   const [date, setDate] = useState('');
   const [newTime, setNewTime] = useState('');
   const [place, setPlace] = useState('');
+  const [activityAmount, setActivityAmount] = useState('');
 
   function handleRandomCity() {
     const randomCityPick = [
@@ -50,6 +51,10 @@ function ActivityForm() {
   function handleTimeChange(event) {
     setNewTime(event.target.value);
   }
+
+  useEffect(() => {
+    setActivityAmount(travel.length);
+  });
 
   // Lägg till aktivitet i listan
   function addActivity() {
@@ -116,6 +121,7 @@ function ActivityForm() {
           <span class='material-icons-outlined'>add</span>
           Lägg till
         </button>
+        <p>Antal aktiviteter: {activityAmount}</p>
       </form>
 
       <ActivityList travel={travel} setTravel={setTravel} />
