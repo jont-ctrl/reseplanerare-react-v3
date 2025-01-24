@@ -123,3 +123,16 @@ button:active {
 .random-btn:active {
   background-color: hsl(0, 0%, 96%);
 }
+
+.randomCat-img {
+  width: 175px;
+  height: 175px;
+  border-radius: 1rem;
+}
+
+.activityList-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
