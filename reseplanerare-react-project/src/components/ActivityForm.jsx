@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ActivityList from './ActivityList';
+import Header from './Header';
 
 function ActivityForm() {
   // [stateValue variable håller aktuella värdet, funktion för uppdatera], intialvalue
@@ -79,6 +80,7 @@ function ActivityForm() {
 
   return (
     <>
+      <Header />
       <form className='travel-form' onSubmit={addActivity}>
         <input
           type='text'
