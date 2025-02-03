@@ -15,7 +15,7 @@ function ActivityList({ travel, setTravel }) {
         {travel.map((item, index) => {
           return (
             // Rendera alla object i travel array och ge varje <li> unik key
-            <li key={index} className='activity-item'>
+            <li key={index.id} className='activity-item'>
               <h3 className='activity-title'>{item.activity}</h3>
               <p className='place-text'>{item.place}</p>
               <p className='time-text'>{item.time}</p>

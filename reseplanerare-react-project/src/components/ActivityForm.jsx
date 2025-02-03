@@ -66,6 +66,7 @@ function ActivityForm() {
       date: date,
       time: newTime,
       place: place,
+      id: Date.now(),
     };
 
     // Lägg till ny travel item object i travel array och updatera state
