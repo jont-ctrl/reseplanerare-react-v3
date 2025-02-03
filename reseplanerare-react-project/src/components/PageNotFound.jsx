@@ -5,7 +5,7 @@ function PageNotFound() {
     <main>
       <h2>Sidan hittades inte! Error 404</h2>
       <p>Har du tappat bort dig?</p>
-      <Link to='/'>Gå tillbaks till hem</Link>
+      <Link to='/'>Gå tillbaka till hem</Link>
     </main>
   );
 }
