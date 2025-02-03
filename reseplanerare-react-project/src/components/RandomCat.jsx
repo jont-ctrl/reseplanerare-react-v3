@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import config from '../config.js';
+
+const apiKey =
+  'live_MBYQSspEx30fGV0wezgfXkQJyISkrB8fzatBUBNsL1dSVwnkj0oWYmiOptDSP7Lv';
 
 function RandomCat() {
   const [catImage, setCatImage] = useState();
@@ -8,7 +10,7 @@ function RandomCat() {
     async function fetchCatImage() {
       try {
         const response = await fetch(
-          `https://api.thecatapi.com/v1/images/search?api_key=${config.apiKey}`
+          `https://api.thecatapi.com/v1/images/search?api_key=${apiKey}`
         );
         const data = await response.json();
         console.log(data);
