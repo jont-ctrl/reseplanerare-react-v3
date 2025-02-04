@@ -3,8 +3,9 @@ import RandomCat from './RandomCat';
 
 // Två props
 function ActivityList({ travel, setTravel }) {
-  function removeItem(index) {
-    const updatedTravel = travel.filter((item, i) => i !== index);
+  // Ta bort en aktivitet
+  function removeItem(id) {
+    const updatedTravel = travel.filter((item) => item.id !== id);
     setTravel(updatedTravel);
   }
 
@@ -12,15 +13,15 @@ function ActivityList({ travel, setTravel }) {
     <div className='activityList-area'>
       <RandomCat />
       <ul className='activity-list'>
-        {travel.map((item, index) => {
+        {travel.map((item) => {
           return (
             // Rendera alla object i travel array och ge varje <li> unik key
-            <li key={index.id} className='activity-item'>
+            <li key={item.id} className='activity-item'>
               <h3 className='activity-title'>{item.activity}</h3>
               <p className='place-text'>{item.place}</p>
               <p className='time-text'>{item.time}</p>
               <p className='date-text'>{item.date}</p>
-              <button className='addBtn' onClick={() => removeItem(index)}>
+              <button className='addBtn' onClick={() => removeItem(item.id)}>
                 <span class='material-icons-outlined'>delete</span>
                 Ta bort
               </button>

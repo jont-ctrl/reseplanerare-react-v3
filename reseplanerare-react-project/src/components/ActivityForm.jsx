@@ -11,6 +11,7 @@ function ActivityForm() {
   const [place, setPlace] = useState('');
   const [activityAmount, setActivityAmount] = useState('');
 
+  // Random city funktion
   function handleRandomCity() {
     const randomCityPick = [
       'Stockholm',
