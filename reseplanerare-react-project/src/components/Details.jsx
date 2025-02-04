@@ -5,7 +5,7 @@ function Details() {
     <>
       <Header />
       <main>
-        <h2>details</h2>
+        <h2>Details</h2>
       </main>
     </>
   );
