@@ -1,13 +1,23 @@
 import React from 'react';
 import RandomCat from './RandomCat';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeActivity } from '../redux/travelSlice';
 
 // Två props
-function ActivityList({ travel, setTravel }) {
+function ActivityList() {
   // Ta bort en aktivitet
+
+  const dispatch = useDispatch();
+  const travel = useSelector((state) => state.travel.activities); // Se till att "travel" är korrekt
+
   function removeItem(id) {
-    const updatedTravel = travel.filter((item) => item.id !== id);
-    setTravel(updatedTravel);
+    dispatch(removeActivity(id));
   }
+
+  // function removeItem(id) {
+  //   const updatedTravel = travel.filter((item) => item.id !== id);
+  //   setTravel(updatedTravel);
+  // }
 
   return (
     <div className='activityList-area'>
@@ -22,7 +32,7 @@ function ActivityList({ travel, setTravel }) {
               <p className='time-text'>{item.time}</p>
               <p className='date-text'>{item.date}</p>
               <button className='addBtn' onClick={() => removeItem(item.id)}>
-                <span class='material-icons-outlined'>delete</span>
+                <span className='material-icons-outlined'>delete</span>
                 Ta bort
               </button>
             </li>

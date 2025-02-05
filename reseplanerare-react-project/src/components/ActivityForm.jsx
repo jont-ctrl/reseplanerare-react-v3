@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import ActivityList from './ActivityList';
 import Header from './Header';
+import { useDispatch } from 'react-redux';
+import { addActivity } from '../redux/travelSlice';
 
 function ActivityForm() {
   // [stateValue variable håller aktuella värdet, funktion för uppdatera], intialvalue
-  const [travel, setTravel] = useState([]);
+  // const [travel, setTravel] = useState([]);
+  const dispatch = useDispatch();
+
   const [newActivity, setNewActivity] = useState('');
   const [date, setDate] = useState('');
   const [newTime, setNewTime] = useState('');
@@ -54,12 +58,12 @@ function ActivityForm() {
     setNewTime(event.target.value);
   }
 
-  useEffect(() => {
-    setActivityAmount(travel.length);
-  });
+  // useEffect(() => {
+  //   setActivityAmount(travel.length);
+  // });
 
   // Lägg till aktivitet i listan
-  function addActivity() {
+  function addActivityHandler(event) {
     event.preventDefault();
 
     const newTravelItem = {
@@ -71,7 +75,10 @@ function ActivityForm() {
     };
 
     // Lägg till ny travel item object i travel array och updatera state
-    setTravel([...travel, newTravelItem]);
+    // setTravel([...travel, newTravelItem]);
+
+    // dispatch nya newTravelItem objectet.
+    dispatch(addActivity(newTravelItem));
 
     // Töm fälten
     setNewActivity('');
@@ -83,7 +90,7 @@ function ActivityForm() {
   return (
     <>
       <Header />
-      <form className='travel-form' onSubmit={addActivity}>
+      <form className='travel-form' onSubmit={addActivityHandler}>
         <input
           type='text'
           name='aktivitet'
@@ -102,7 +109,7 @@ function ActivityForm() {
           value={place}
           onChange={handlePlaceChange}
         />
-        <button onClick={handleRandomCity} className='random-btn'>
+        <button type='button' onClick={handleRandomCity} className='random-btn'>
           🔄
         </button>
         <input
@@ -122,13 +129,13 @@ function ActivityForm() {
         />
 
         <button type='submit' className='addBtn'>
-          <span class='material-icons-outlined'>add</span>
+          <span className='material-icons-outlined'>add</span>
           Lägg till
         </button>
         <p>Antal aktiviteter: {activityAmount}</p>
       </form>
 
-      <ActivityList travel={travel} setTravel={setTravel} />
+      <ActivityList />
     </>
   );
 }
