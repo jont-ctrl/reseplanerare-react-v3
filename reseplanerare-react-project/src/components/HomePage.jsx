@@ -14,8 +14,10 @@ function HomePage() {
         {travel.map((trav) => {
           return (
             <>
-              <h3>{trav.activity}</h3>
-              <p>{trav.place}</p>
+              <div className='activity-item-homepage' key={trav.id}>
+                <h3>{trav.activity}</h3>
+                <p>{trav.place}</p>
+              </div>
             </>
           );
         })}

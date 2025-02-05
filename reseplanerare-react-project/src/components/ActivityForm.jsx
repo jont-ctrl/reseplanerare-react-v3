@@ -3,6 +3,7 @@ import ActivityList from './ActivityList';
 import Header from './Header';
 import { useDispatch } from 'react-redux';
 import { addActivity } from '../redux/travelSlice';
+import { useSelector } from 'react-redux';
 
 function ActivityForm() {
   // [stateValue variable håller aktuella värdet, funktion för uppdatera], intialvalue
@@ -58,9 +59,10 @@ function ActivityForm() {
     setNewTime(event.target.value);
   }
 
-  // useEffect(() => {
-  //   setActivityAmount(travel.length);
-  // });
+  const travel = useSelector((state) => state.travel.activities);
+  useEffect(() => {
+    setActivityAmount(travel.length);
+  });
 
   // Lägg till aktivitet i listan
   function addActivityHandler(event) {
