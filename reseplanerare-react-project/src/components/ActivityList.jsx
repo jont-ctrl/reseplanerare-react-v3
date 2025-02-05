@@ -14,11 +14,6 @@ function ActivityList() {
     dispatch(removeActivity(id));
   }
 
-  // function removeItem(id) {
-  //   const updatedTravel = travel.filter((item) => item.id !== id);
-  //   setTravel(updatedTravel);
-  // }
-
   return (
     <div className='activityList-area'>
       <RandomCat />

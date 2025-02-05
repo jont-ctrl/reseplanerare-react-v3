@@ -59,6 +59,7 @@ function ActivityForm() {
     setNewTime(event.target.value);
   }
 
+  // Antal aktiviteter text
   const travel = useSelector((state) => state.travel.activities);
   useEffect(() => {
     setActivityAmount(travel.length);
