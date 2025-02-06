@@ -9,8 +9,7 @@ function HomePage() {
     <>
       <Header />
       <main>
-        <h2>Homepage</h2>
-        <h3>Aktiviteter:</h3>
+        <h2>Översikt aktiviteter:</h2>
         {travel.map((trav) => {
           return (
             <>
