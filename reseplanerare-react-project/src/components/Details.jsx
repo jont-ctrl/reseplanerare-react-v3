@@ -1,4 +1,5 @@
 import Header from './Header';
+import Footer from './Footer';
 
 function Details() {
   return (
@@ -7,6 +8,7 @@ function Details() {
       <main>
         <h2>Details</h2>
       </main>
+      <Footer />
     </>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import RandomCat from './RandomCat';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeActivity } from '../redux/travelSlice';
 import './Css/ActivityList.css'
@@ -17,7 +16,6 @@ function ActivityList() {
 
   return (
     <div className='activityList-area'>
-      <RandomCat />
       <ul className='activity-list'>
         {travel.map((item) => {
           return (

@@ -56,13 +56,6 @@
   }
   
   
-  .randomCat-img {
-    width: 175px;
-    height: 175px;
-    border-radius: 1rem;
-  }
-
-  
    
   @media (max-width: 600px) {
     .activity-list {

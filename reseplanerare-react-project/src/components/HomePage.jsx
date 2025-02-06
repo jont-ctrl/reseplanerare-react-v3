@@ -1,6 +1,7 @@
 import Header from './Header';
 import { useSelector } from 'react-redux';
 import ActivityList from './ActivityList';
+import Footer from './Footer'
 
 function HomePage() {
   const travel = useSelector((state) => state.travel.activities);
@@ -21,6 +22,7 @@ function HomePage() {
           );
         })}
       </main>
+      <Footer />
     </>
   );
 }
