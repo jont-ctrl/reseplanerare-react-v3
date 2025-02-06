@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="trip-planner-info">
           <h2>Planera din resa med oss!</h2>
           <p>Vår reseplanerare hjälper dig att skapa den perfekta resan. Fyll i dina preferenser och få en skräddarsydd reseplan.</p>
-          <Link to="/resa" className="footer-link">
+          <Link to="/new" className="footer-link">
             Planera din resa här
           </Link>
         </div>
