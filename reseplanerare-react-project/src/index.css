@@ -68,7 +68,8 @@ button:active {
 }
 
 .activity-item,
-.activity-item-homepage {
+.activity-item-homepage,
+.activity-item-details-page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,4 +159,11 @@ button:active {
   justify-content: center;
   align-items: center;
   margin: 1rem;
+}
+
+.activity-full-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

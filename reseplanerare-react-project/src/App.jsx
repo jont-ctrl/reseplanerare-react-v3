@@ -6,7 +6,7 @@ import HomePage from './components/HomePage';
 import PageNotFound from './components/PageNotFound';
 import Details from './components/Details';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ActvitiyDetails from './components/ActvitiyDetails';
+import ActivityDetails from './components/ActvitiyDetails';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/details/:activityID',
-    element: <ActvitiyDetails />,
+    element: <ActivityDetails />,
   },
 ]);
 

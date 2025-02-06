@@ -15,7 +15,7 @@ function Header() {
           <Link to='/new'>Ny Aktivitet</Link>
         </li>
         <li>
-          <Link to='/details'>Detailjsida</Link>
+          <Link to='/details'>Detaljsida</Link>
         </li>
       </ul>
       <ClockTime />

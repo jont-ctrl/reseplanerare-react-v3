@@ -12,8 +12,8 @@ function Details() {
         <h2>Details</h2>
         {travel.map((trav) => {
           return (
-            <div className='activity-item-details-page'>
-              <p>{trav.activity}</p>
+            <div className='activity-item-details-page' key={trav.id}>
+              <h3>{trav.activity}</h3>
               <Link to={`/details/${trav.id}`}>Läs mer</Link>
             </div>
           );
