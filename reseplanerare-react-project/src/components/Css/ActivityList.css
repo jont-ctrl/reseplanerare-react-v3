@@ -54,8 +54,41 @@
     align-items: center;
     font-weight: bold;
   }
+
+  .edit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    margin-top: 20px;
+  }
   
+  .edit-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 200px;
+  }
+
+  .cancelBtn {
+    background-color: #7f180f;
+    color: white;
+  }
+
+  .saveBtn {
+    background-color: #1a711e;
+    color: white;
+  }
   
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
    
   @media (max-width: 600px) {
     .activity-list {

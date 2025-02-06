@@ -55,50 +55,58 @@ function handleInputChange(e, field) {
 
 return (
   <div className="activityList-area">
-    <ul className="activity-list">
-      {travel.map((item) => (
-        <li key={item.id} className="activity-item">
-          {editingActivity === item.id ? (
-            // Formulär för att redigera
-            <>
-              <input
-                type="text"
-                value={editedValues.activity}
-                onChange={(e) => handleInputChange(e, 'activity')}
-              />
-              <input
-                type="text"
-                value={editedValues.place}
-                onChange={(e) => handleInputChange(e, 'place')}
-              />
-              <input
-                type="time"
-                value={editedValues.time}
-                onChange={(e) => handleInputChange(e, 'time')}
-              />
-              <input
-                type="date"
-                value={editedValues.date}
-                onChange={(e) => handleInputChange(e, 'date')}
-              />
+  <ul className="activity-list">
+    {travel.map((item) => (
+      <li key={item.id} className="activity-item">
+        {editingActivity === item.id ? (
+          // Formulär för att redigera
+          <div className="edit-container">
+            <input
+              type="text"
+              value={editedValues.activity}
+              onChange={(e) => handleInputChange(e, 'activity')}
+              className="edit-input"
+              placeholder="Aktivitet"
+            />
+            <input
+              type="text"
+              value={editedValues.place}
+              onChange={(e) => handleInputChange(e, 'place')}
+              className="edit-input"
+              placeholder="Plats"
+            />
+            <input
+              type="time"
+              value={editedValues.time}
+              onChange={(e) => handleInputChange(e, 'time')}
+              className="edit-input"
+            />
+            <input
+              type="date"
+              value={editedValues.date}
+              onChange={(e) => handleInputChange(e, 'date')}
+              className="edit-input"
+            />
+            <div className="button-container">
               <button className="saveBtn" onClick={saveEditing}>Spara</button>
               <button className="cancelBtn" onClick={cancelEditing}>Avbryt</button>
-            </>
-          ) : (
-            // Visa information för en aktivitet
-            <>
-              <h3 className="activity-title">{item.activity}</h3>
-              <p className="place-text">{item.place}</p>
-              <p className="time-text">{item.time}</p>
-              <p className="date-text">{item.date}</p>
-              <button className="editBtn" onClick={() => startEditing(item)}>Redigera</button>
-              <button className="addBtn" onClick={() => removeItem(item.id)}>Ta bort</button>
-            </>
-          )}
-        </li>
-      ))}
-    </ul>
-  </div>
+            </div>
+          </div>
+        ) : (
+          // Visa information för en aktivitet
+          <>
+            <h3 className="activity-title">{item.activity}</h3>
+            <p className="place-text">{item.place}</p>
+            <p className="time-text">{item.time}</p>
+            <p className="date-text">{item.date}</p>
+            <button className="editBtn" onClick={() => startEditing(item)}>Redigera</button>
+            <button className="addBtn" onClick={() => removeItem(item.id)}>Ta bort</button>
+          </>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
 );
 }
 
