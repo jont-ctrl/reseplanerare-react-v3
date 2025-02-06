@@ -32,6 +32,7 @@
   .date-text,
   .time-text {
     color: hsl(0, 0%, 30%);
+    text-decoration: none;
   }
   
   .activity-title {
