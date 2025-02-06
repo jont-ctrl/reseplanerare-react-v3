@@ -23,10 +23,10 @@ function RandomCat() {
   }, []);
 
   return (
-    <>
-      <img src={catImage} alt='cat' className='randomCat-img' />
+    <div className="randomCat-wrapper">
+      <img src={catImage} alt="cat" className="randomCat-img" />
       <figcaption>Random katt</figcaption>
-    </>
+    </div>
   );
 }
 

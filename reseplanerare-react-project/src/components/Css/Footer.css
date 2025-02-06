@@ -1,0 +1,73 @@
+footer {
+    background-color: #252424;
+    padding: 0px;
+    margin-top: 0px;
+    color: rgb(246, 246, 238);
+    min-height: 200px; 
+    display: flex;
+    justify-content: center; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+    width: 80%;
+    padding: 10px;
+}
+
+.trip-planner-info {
+    max-width: 300px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.trip-planner-info h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.trip-planner-info p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.randomCat-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.randomCat-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+}
+
+figcaption {
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(246, 246, 238);
+    font-weight: bold;
+}
+
+.footer-link {
+    color: #ffffff;  
+    text-decoration: none;  
+    margin-top: 10px;
+    display: inline-block;
+    background-color: rgb(143, 131, 117);
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .footer-link:hover {
+    color: #e08900; 
+    text-decoration: underline;
+  }
+  

@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addActivity } from '../redux/travelSlice';
 import { useSelector } from 'react-redux';
 import './Css/ActivityForm.css'
+import Footer from './Footer.jsx';
 
 function ActivityForm() {
   // [stateValue variable håller aktuella värdet, funktion för uppdatera], intialvalue
@@ -141,6 +142,7 @@ function ActivityForm() {
         </form>
       </div>
       <ActivityList />
+      <Footer />
     </>
   );
 }
