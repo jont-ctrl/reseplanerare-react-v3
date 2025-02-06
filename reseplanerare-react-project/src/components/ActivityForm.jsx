@@ -118,7 +118,7 @@ function ActivityForm() {
         />
 
         <button type='submit' className='addBtn'>
-          <span class='material-icons-outlined'>add</span>
+          <span className='material-icons-outlined'>add</span>
           Lägg till
         </button>
         <p>Antal aktiviteter: {activityAmount}</p>
