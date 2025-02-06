@@ -4,6 +4,7 @@ import Header from './Header';
 import { useDispatch } from 'react-redux';
 import { addActivity } from '../redux/travelSlice';
 import { useSelector } from 'react-redux';
+import './Css/ActivityForm.css'
 
 function ActivityForm() {
   // [stateValue variable håller aktuella värdet, funktion för uppdatera], intialvalue
@@ -93,51 +94,52 @@ function ActivityForm() {
   return (
     <>
       <Header />
-      <form className='travel-form' onSubmit={addActivityHandler}>
-        <input
-          type='text'
-          name='aktivitet'
-          id='aktivitet'
-          placeholder='Ange aktivitet'
-          required
-          value={newActivity}
-          onChange={handleActivityChange}
-        />
-        <input
-          type='text'
-          name='plats'
-          id='plats'
-          placeholder='Ange plats'
-          required
-          value={place}
-          onChange={handlePlaceChange}
-        />
-        <button type='button' onClick={handleRandomCity} className='random-btn'>
-          🔄
-        </button>
-        <input
-          type='time'
-          name='time'
-          id='time'
-          value={newTime}
-          onChange={handleTimeChange}
-        />
-        <input
-          type='date'
-          name='datum'
-          id='datum'
-          required
-          value={date}
-          onChange={handleDateChange}
-        />
-
-        <button type='submit' className='addBtn'>
-          <span className='material-icons-outlined'>add</span>
-          Lägg till
-        </button>
-        <p>Antal aktiviteter: {activityAmount}</p>
-      </form>
-
+      <div className="form-container">
+        <h2>Lägg till en ny aktivitet</h2> 
+        <form className="travel-form" onSubmit={addActivityHandler}>
+          <input
+            type="text"
+            name="aktivitet"
+            id="aktivitet"
+            placeholder="Ange aktivitet"
+            required
+            value={newActivity}
+            onChange={handleActivityChange}
+          />
+          <input
+            type="text"
+            name="plats"
+            id="plats"
+            placeholder="Ange plats"
+            required
+            value={place}
+            onChange={handlePlaceChange}
+          />
+          <button type="button" onClick={handleRandomCity} className="random-btn">
+            🔄
+          </button>
+          <input
+            type="time"
+            name="time"
+            id="time"
+            value={newTime}
+            onChange={handleTimeChange}
+          />
+          <input
+            type="date"
+            name="datum"
+            id="datum"
+            required
+            value={date}
+            onChange={handleDateChange}
+          />
+          <button type="submit" className="addBtn">
+            <span className="material-icons-outlined">add</span>
+            Lägg till
+          </button>
+          <p>Antal aktiviteter: {activityAmount}</p>
+        </form>
+      </div>
       <ActivityList />
     </>
   );

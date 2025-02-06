@@ -2,6 +2,7 @@ import React from 'react';
 import RandomCat from './RandomCat';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeActivity } from '../redux/travelSlice';
+import './Css/ActivityList.css'
 
 // Två props
 function ActivityList() {
