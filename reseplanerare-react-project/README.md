@@ -1,17 +1,19 @@
 # Reseplanerare
 
-En enkel React-applikation för att lägga till och visa aktiviteter med datum och plats. Användare kan fylla i fält för aktivitet, datum och plats, och sedan visa en lista över alla tillagda aktiviteter.
+Det här är en app som enkelt hjälper dig navigera, lägga till och även se över dina resmål. Med bår reseplanerare har det aldirig varit så smidigt att lägga till datum och tider du vill ha sparade för dina resmål.
 
 # Teknologier:
 
 React: JavaScript-bibliotek för användargränssnitt.
 Vite: Ett snabb och lätt byggverktyg som används för att utveckla och bygga applikationen.
-State Management: useState-hooken används för att hantera applikationens tillstånd.
-Props: för att skicka data mellan komponenterna.
+useEffect för enskilda komponenter
+useState för uppdatering och datahämtning
+Redux Toolkit för central resedata
 
 # Installation:
 
-Klona / ladda ner detta repository
+Använd Github desktop för att enkelt klona repot till Visual Studio Code. Välj Add sen clone repository.
+Annars kan du köra git clone https://github.com/jont-ctrl/reseplanerare-react-v3
 
 Installera nödvändiga dependencies:
 npm install
