@@ -43,6 +43,28 @@ button:active {
   transform: scale(0.95);
 }
 
+
+.button-link {
+  display: inline-block;
+  border: none;
+  background-color: black;
+  color: white;
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, background-color 0.3s ease;
+  font-size: 17px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button-link:hover {
+  background-color: hsl(0, 0%, 20%);
+  transform: scale(1.05);
+}
+
+
 .activity-full-details {
   display: flex;
   flex-direction: column;
