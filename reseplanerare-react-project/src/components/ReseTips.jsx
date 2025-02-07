@@ -1,46 +1,47 @@
 import React, { useEffect, useState } from 'react';
+import OpenAI from 'openai';
 
-function ReseTips() {
-  const [hotelPhotos, setHotelPhotos] = useState(null);
+const openai = new OpenAI();
+
+const ReseTips = () => {
+  const [countryPhotos, setCountryPhotos] = useState(null);
 
   useEffect(() => {
-    const fetchHotelPhotos = async () => {
-      const url =
-        'https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040';
-      const options = {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-key': 'your-api-key-here',
-          'x-rapidapi-host': 'hotels4.p.rapidapi.com',
-        },
-      };
-
+    const fetchImage = async () => {
       try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        console.log(result);
-        setHotelPhotos(result);
+        const response = await openai.images.generate({
+          model: 'dall-e-3',
+          prompt: 'Country Location Trip advising',
+          n: 1,
+          size: '1024x1024',
+        });
+
+        setCountryPhotos(response.data[0].url);
       } catch (error) {
-        console.error('Error fetching hotel photos:', error);
+        console.error('Error fetching image:', error);
       }
     };
 
-    fetchHotelPhotos();
+    fetchImage();
   }, []);
 
   return (
     <div>
       <h1>ReseTips</h1>
-      {hotelPhotos ? (
+      {countryPhotos ? (
         <div>
-          <h2>Hotel Photos:</h2>
-          {}
+          <h2>Country Photos:</h2>
+          <img
+            src={countryPhotos}
+            alt='Generated Country'
+            style={{ width: '100%', maxWidth: '1024px' }}
+          />
         </div>
       ) : (
         <p>Loading...</p>
       )}
     </div>
   );
-}
+};
 
 export default ReseTips;
