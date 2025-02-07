@@ -2,6 +2,7 @@ import Header from './Header';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 function ActivityDetails() {
   const { activityID } = useParams();
@@ -23,6 +24,7 @@ function ActivityDetails() {
         <p>{travel.time}🕒</p>
         <Link to='/details'>Gå Tillbaka</Link>
       </div>
+      <Footer />
     </>
   );
 }

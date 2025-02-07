@@ -42,3 +42,10 @@ button:active {
   background-color: hsl(0, 0%, 20%);
   transform: scale(0.95);
 }
+
+.activity-full-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
