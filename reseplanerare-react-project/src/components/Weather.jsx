@@ -24,6 +24,8 @@ function Weather() {
         if (!result.ok) {
           throw new Error('Failed to fetch weather data');
         }
+        console.log('Väder:', result);
+
         const json = await result.json();
 
         console.log(json);
@@ -52,6 +54,11 @@ function Weather() {
           <>
             <p>{`Tempraturen i Stockholm är: ${weather.current.temp_c}°C men det känns som ${weather.current.feelslike_c}°C`}</p>
             <p>{`Senast uppdaterad: ${weather.current.last_updated}`}</p>
+
+            <figure>
+              <img src={weather.current.condition.icon} alt='weather icon' />
+              <figcaption>{weather.current.condition.text}.</figcaption>
+            </figure>
           </>
         )
       )}
