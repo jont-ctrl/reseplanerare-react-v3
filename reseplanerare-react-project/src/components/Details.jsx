@@ -15,8 +15,8 @@ function Details() {
           return (
             <div className='activity-item-details-page' key={trav.id}>
               <h3>{trav.activity}</h3>
-              <Link to={`/details/${trav.id}`}>Läs mer</Link>
-            </div>
+              <Link to={`/details/${trav.id}`} className="read-more-link">Läs mer</Link>
+              </div>
           );
         })}
       </main>
