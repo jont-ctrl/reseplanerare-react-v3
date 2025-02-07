@@ -11,14 +11,18 @@ function Details() {
       <Header />
       <main>
         <h2>Details</h2>
-        {travel.map((trav) => {
-          return (
-            <div className='activity-item-details-page' key={trav.id}>
-              <h3>{trav.activity}</h3>
-              <Link to={`/details/${trav.id}`} className="read-more-link">Läs mer</Link>
+        <div className='activity-details-site'>
+          {travel.map((trav) => {
+            return (
+              <div className='activity-item-details-page' key={trav.id}>
+                <h3>{trav.activity}</h3>
+                <Link to={`/details/${trav.id}`} className='read-more-link'>
+                  Läs mer
+                </Link>
               </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </main>
       <Footer />
     </>

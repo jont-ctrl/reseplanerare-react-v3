@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const ApiKey = 'cbd897574f95429ebc6131621250602';
-const URL = `https://api.weatherapi.com/v1/current.json?key=${ApiKey}&q=Stockholm&aqi=no`;
+const URL = `https://api.weatherapi.com/v1/current.json?key=${ApiKey}&q=Linkoping&aqi=no`;
 const CACHE_EXPIRY_TIME = 15 * 60 * 1000; // 15 minutes in milliseconds
 
 function Weather() {
@@ -52,7 +52,7 @@ function Weather() {
       ) : (
         weather && (
           <>
-            <p>{`Tempraturen i Stockholm är: ${weather.current.temp_c}°C men det känns som ${weather.current.feelslike_c}°C`}</p>
+            <p>{`Tempraturen i Linkoping är: ${weather.current.temp_c}°C men det känns som ${weather.current.feelslike_c}°C`}</p>
             <p>{`Senast uppdaterad: ${weather.current.last_updated}`}</p>
 
             <figure>
