@@ -45,7 +45,6 @@ function Weather() {
 
   return (
     <footer>
-      <h1>Det här är en footer</h1>
       {error ? (
         <p>{error}</p>
       ) : (
