@@ -8,7 +8,7 @@ export default function Footer() {
     <footer>
       <div className='footer-content'>
         <div className='trip-planner-info'>
-          <p>
+          <p> 
             Vår reseplanerare hjälper dig att skapa den perfekta resan. Fyll i
             dina preferenser och få en skräddarsydd reseplan.
           </p>
@@ -16,8 +16,13 @@ export default function Footer() {
             Planera din resa här
           </Link>
         </div>
-        <RandomCat />
-        <Weather />
+
+        <div className='weather-wrapper'>
+          <Weather />
+        </div>
+        
+          <RandomCat />
+
       </div>
     </footer>
   );

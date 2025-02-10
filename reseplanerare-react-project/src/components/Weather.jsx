@@ -46,24 +46,23 @@ function Weather() {
   }, []);
 
   return (
-    <footer>
-      {error ? (
-        <p>{error}</p>
-      ) : (
-        weather && (
-          <>
-            <p>{`Tempraturen i Linkoping är: ${weather.current.temp_c}°C men det känns som ${weather.current.feelslike_c}°C`}</p>
-            <p>{`Senast uppdaterad: ${weather.current.last_updated}`}</p>
+    <div className="weather-container">
+    {error ? (
+      <p>{error}</p>
+    ) : (
+      weather && (
+        <>
+          <p>{`Temperaturen i Linköping är: ${weather.current.temp_c}°C men det känns som ${weather.current.feelslike_c}°C`}</p>
+          <p>{`Senast uppdaterad: ${weather.current.last_updated}`}</p>
 
-            <figure>
-              <img src={weather.current.condition.icon} alt='weather icon' />
-              <figcaption>{weather.current.condition.text}.</figcaption>
-            </figure>
-          </>
-        )
-      )}
-      <p>&copy; {new Date().getFullYear()} Copyright Reseplaneraren</p>
-    </footer>
+          <figure>
+            <img src={weather.current.condition.icon} alt="weather icon" />
+            <figcaption>{weather.current.condition.text}.</figcaption>
+          </figure>
+        </>
+      )
+    )}
+  </div>
   );
 }
 
