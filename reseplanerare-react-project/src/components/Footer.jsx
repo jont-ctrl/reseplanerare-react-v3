@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import RandomCat from './RandomCat';
 import './Css/Footer.css';
+import Weather from './Weather';
 
 export default function Footer() {
   return (
     <footer>
       <div className='footer-content'>
         <div className='trip-planner-info'>
-          <h2>Planera din resa med oss!</h2>
-          <p>
+          <p> 
             Vår reseplanerare hjälper dig att skapa den perfekta resan. Fyll i
             dina preferenser och få en skräddarsydd reseplan.
           </p>
@@ -16,7 +16,13 @@ export default function Footer() {
             Planera din resa här
           </Link>
         </div>
-        <RandomCat />
+
+        <div className='weather-wrapper'>
+          <Weather />
+        </div>
+        
+          <RandomCat />
+
       </div>
     </footer>
   );
