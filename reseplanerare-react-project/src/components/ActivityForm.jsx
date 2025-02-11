@@ -1,98 +1,74 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addActivity } from '../redux/travelSlice';
 import ActivityList from './ActivityList';
 import Header from './Header';
-import { useDispatch } from 'react-redux';
-import { addActivity } from '../redux/travelSlice';
-import { useSelector } from 'react-redux';
+
+const MemoizedHeader = React.memo(Header);
+const MemoizedActivityList = React.memo(ActivityList);
 
 function ActivityForm() {
-  // [stateValue variable håller aktuella värdet, funktion för uppdatera], intialvalue
-  // const [travel, setTravel] = useState([]);
   const dispatch = useDispatch();
-
+  
   const [newActivity, setNewActivity] = useState('');
   const [date, setDate] = useState('');
   const [newTime, setNewTime] = useState('');
   const [place, setPlace] = useState('');
-  const [activityAmount, setActivityAmount] = useState('');
 
-  // Random city funktion
-  function handleRandomCity() {
-    const randomCityPick = [
-      'Stockholm',
-      'Göteborg',
-      'Malmö',
-      'Oslo',
-      'Köpenhamn',
-      'Helsingfors',
-      'Paris',
-      'New York',
-      'Tokyo',
-      'Berlin',
-      'London',
-      'Sydney',
-      'Dubai',
-      'Barcelona',
-      'Rom',
-    ];
-
-    setPlace(randomCityPick[Math.floor(Math.random() * randomCityPick.length)]);
-  }
-
-  // Hantera aktivitetens namn
-  function handleActivityChange(event) {
-    setNewActivity(event.target.value);
-  }
-
-  // Hantera datum
-  function handleDateChange(event) {
-    setDate(event.target.value);
-  }
-
-  // Hantera plats
-  function handlePlaceChange(event) {
-    setPlace(event.target.value);
-  }
-
-  // Hantera tid
-  function handleTimeChange(event) {
-    setNewTime(event.target.value);
-  }
-
-  // Antal aktiviteter text
   const travel = useSelector((state) => state.travel.activities);
-  useEffect(() => {
-    setActivityAmount(travel.length);
-  });
 
-  // Lägg till aktivitet i listan
-  function addActivityHandler(event) {
+  // 🟢 Use useMemo to optimize activity count calculation
+  const activityAmount = useMemo(() => travel.length, [travel]);
+
+  // 🟢 Memoized Random City Generator
+  const handleRandomCity = useCallback(() => {
+    const randomCityPick = [
+      'Stockholm', 'Göteborg', 'Malmö', 'Oslo', 'Köpenhamn',
+      'Helsingfors', 'Paris', 'New York', 'Tokyo', 'Berlin',
+      'London', 'Sydney', 'Dubai', 'Barcelona', 'Rom'
+    ];
+    setPlace(randomCityPick[Math.floor(Math.random() * randomCityPick.length)]);
+  }, []);
+
+  // 🟢 Memoized Event Handlers
+  const handleActivityChange = useCallback((event) => {
+    setNewActivity(event.target.value);
+  }, []);
+
+  const handleDateChange = useCallback((event) => {
+    setDate(event.target.value);
+  }, []);
+
+  const handlePlaceChange = useCallback((event) => {
+    setPlace(event.target.value);
+  }, []);
+
+  const handleTimeChange = useCallback((event) => {
+    setNewTime(event.target.value);
+  }, []);
+
+  // 🟢 Memoized Submit Handler
+  const addActivityHandler = useCallback((event) => {
     event.preventDefault();
-
     const newTravelItem = {
       activity: newActivity,
-      date: date,
+      date,
       time: newTime,
-      place: place,
+      place,
       id: Date.now(),
     };
-
-    // Lägg till ny travel item object i travel array och updatera state
-    // setTravel([...travel, newTravelItem]);
-
-    // dispatch nya newTravelItem objectet.
     dispatch(addActivity(newTravelItem));
 
-    // Töm fälten
+    // Reset fields
     setNewActivity('');
     setDate('');
     setNewTime('');
     setPlace('');
-  }
+  }, [newActivity, date, newTime, place, dispatch]);
 
   return (
     <>
-      <Header />
+      <MemoizedHeader />
       <form className='travel-form' onSubmit={addActivityHandler}>
         <input
           type='text'
@@ -130,7 +106,6 @@ function ActivityForm() {
           value={date}
           onChange={handleDateChange}
         />
-
         <button type='submit' className='addBtn'>
           <span className='material-icons-outlined'>add</span>
           Lägg till
@@ -138,9 +113,9 @@ function ActivityForm() {
         <p>Antal aktiviteter: {activityAmount}</p>
       </form>
 
-      <ActivityList />
+      <MemoizedActivityList />
     </>
   );
 }
 
-export default ActivityForm;
+export default React.memo(ActivityForm);
