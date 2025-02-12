@@ -35,8 +35,16 @@ function ImageLocation({ place }) {
     <>
       <img
         className='city-photo'
-        src={imageLocation.photos[0].src.large}
-        alt={imageLocation.photos[0].alt}
+        src={
+          imageLocation.photos.length === 0
+            ? 'https://images.pexels.com/photos/2174656/pexels-photo-2174656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+            : imageLocation.photos[0].src.large
+        }
+        alt={
+          imageLocation.photos.length === 0
+            ? 'Yellow bus travel'
+            : imageLocation.photos[0].alt
+        }
       />
     </>
   );
