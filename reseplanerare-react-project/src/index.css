@@ -43,7 +43,6 @@ button:active {
   transform: scale(0.95);
 }
 
-
 .button-link {
   display: inline-block;
   border: none;
@@ -63,7 +62,6 @@ button:active {
   background-color: hsl(0, 0%, 20%);
   transform: scale(1.05);
 }
-
 
 .activity-full-details {
   display: flex;
