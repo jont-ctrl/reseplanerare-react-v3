@@ -16,6 +16,7 @@ function Details() {
             return (
               <div className='activity-item-details-page' key={trav.id}>
                 <h3>{trav.activity}</h3>
+                <p>🗺️{trav.place}</p>
                 <Link to={`/details/${trav.id}`} className='read-more-link'>
                   Läs mer
                 </Link>
