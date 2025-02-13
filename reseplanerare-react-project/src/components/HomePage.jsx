@@ -1,6 +1,7 @@
 import Header from './Header';
 import { useSelector } from 'react-redux';
 import ActivityList from './ActivityList';
+import Footer from './Footer'
 
 function HomePage() {
   const travel = useSelector((state) => state.travel.activities);
@@ -9,8 +10,7 @@ function HomePage() {
     <>
       <Header />
       <main>
-        <h2>Homepage</h2>
-        <h3>Aktiviteter:</h3>
+        <h2>Översikt aktiviteter:</h2>
         {travel.map((trav) => {
           return (
             <>
@@ -22,6 +22,7 @@ function HomePage() {
           );
         })}
       </main>
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,61 @@
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-size: 32px;
+    color: rgb(246, 246, 238);
+    font-weight: bold;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.54);
+  }
+  
+  .travel-form {
+    margin: 30px auto;
+    padding: 25px 40px 25px 40px;
+    background-color: rgb(174, 160, 143);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+
+  }
+  
+  input {
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 2rem;
+    width: 270px;
+    text-align: center;
+    font-size: 17px;
+  }
+  
+  .random-btn {
+    padding: 0.1rem 0.1rem;
+    font-size: 2.5rem;
+    background-color: transparent; 
+    transition: all 0.3s ease; 
+  }
+
+.random-btn:hover {
+    transform: scale(1.1); 
+    background-color: transparent; 
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.531);
+}
+
+.random-btn:active {
+    background-color: transparent; 
+    transform: scale(0.95); 
+}
+  .addBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
