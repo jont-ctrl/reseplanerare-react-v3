@@ -94,6 +94,7 @@ function ActivityForm() {
 
   return (
     <>
+
       <Header />
       <div className="form-container">
         <h2>Lägg till en ny aktivitet</h2> 
@@ -143,6 +144,7 @@ function ActivityForm() {
       </div>
       <ActivityList />
       <Footer />
+
     </>
   );
 }

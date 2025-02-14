@@ -1,39 +1,55 @@
-import { useState } from 'react';
-import Header from './components/Header';
-import ActivityForm from './components/ActivityForm';
-import ActivityList from './components/ActivityList';
-import HomePage from './components/HomePage';
-import PageNotFound from './components/PageNotFound';
-import Details from './components/Details';
+import {  Suspense, lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ActivityDetails from './components/ActvitiyDetails';
+
+// Lazy load components
+const HomePage = lazy(() => import('./components/HomePage'));
+const ActivityForm = lazy(() => import('./components/ActivityForm'));
+const Details = lazy(() => import('./components/Details'));
+const PageNotFound = lazy(() => import('./components/PageNotFound'));
+const ActivityDetails = lazy(() => import('./components/ActivityDetails'));
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />,
-    errorElement: <PageNotFound />,
+    element: (
+      <Suspense fallback={<div>Loading HomePage...</div>}>
+        <HomePage />
+      </Suspense>
+    ),
+    errorElement: (
+      <Suspense fallback={<div>Loading PageNotFound...</div>}>
+        <PageNotFound />
+      </Suspense>
+    ),
   },
   {
     path: '/new',
-    element: <ActivityForm />,
+    element: (
+      <Suspense fallback={<div>Loading ActivityForm...</div>}>
+        <ActivityForm />
+      </Suspense>
+    ),
   },
   {
     path: '/details',
-    element: <Details />,
+    element: (
+      <Suspense fallback={<div>Loading Details...</div>}>
+        <Details />
+      </Suspense>
+    ),
   },
   {
     path: '/details/:activityID',
-    element: <ActivityDetails />,
+    element: (
+      <Suspense fallback={<div>Loading ActivityDetails...</div>}>
+        <ActivityDetails />
+      </Suspense>
+    ),
   },
 ]);
 
 function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

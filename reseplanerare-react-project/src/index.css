@@ -43,7 +43,6 @@ button:active {
   transform: scale(0.95);
 }
 
-
 .button-link {
   display: inline-block;
   border: none;
@@ -64,10 +63,29 @@ button:active {
   transform: scale(1.05);
 }
 
-
 .activity-full-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+/* .main-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-links {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-links li {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+} */
