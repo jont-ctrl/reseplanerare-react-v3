@@ -12,7 +12,6 @@ body {
   font-optical-sizing: auto;
 }
 
-
 main {
   display: flex;
   justify-content: center;
@@ -44,8 +43,6 @@ button:active {
   transform: scale(0.95);
 }
 
-
-
 .button-link {
   display: inline-block;
   border: none;
@@ -66,7 +63,6 @@ button:active {
   transform: scale(1.05);
 }
 
-
 .activity-full-details {
   display: flex;
   flex-direction: column;
@@ -74,7 +70,7 @@ button:active {
   align-items: center;
 }
 
-.main-title a {
+/* .main-title a {
   text-decoration: none;
   color: black;
 }
@@ -92,4 +88,4 @@ button:active {
   justify-content: center;
   align-items: center;
   margin: 1rem;
-}
+} */
