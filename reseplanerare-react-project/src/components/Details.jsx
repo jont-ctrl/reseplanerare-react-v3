@@ -1,8 +1,10 @@
-
 import { useSelector } from 'react-redux';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import '../components/Css/Detalis.css';
+import '../components/Css/ActivityList.css';
+import '../index.css';
 
 function Details() {
   const travel = useSelector((state) => state.travel.activities);
