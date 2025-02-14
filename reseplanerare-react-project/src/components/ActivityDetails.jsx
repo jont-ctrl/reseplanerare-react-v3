@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import './Css/Detalis.css';
+import ImageLocation from './ImageLocation';
 
 function ActivityDetails() {
   const { activityID } = useParams();
@@ -20,6 +21,7 @@ function ActivityDetails() {
       <div className='activity-full-details'>
         <h4>Aktivitets id: {activityID}</h4>
         <h5>{travel.activity}</h5>
+        <ImageLocation place={travel.place} />
         <p>🗺️ {travel.place}</p>
         <p>📅 {travel.date}</p>
         <p>🕒 {travel.time}</p>

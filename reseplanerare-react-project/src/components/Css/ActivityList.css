@@ -122,14 +122,21 @@
   gap: 1rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1150px) {
+  .activity-details-site {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 825px) {
   .activity-details-site {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   .activity-details-site {
     display: grid;
     grid-template-columns: 1fr;
