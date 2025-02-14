@@ -17,7 +17,10 @@ function Header() {
             <Link to='/new'>Ny aktivitet</Link>
           </li>
           <li>
-            <Link to='/details'>Detailjsida</Link>
+            <Link to='/details'>Detaljsida</Link>
+          </li>
+          <li>
+            <Link to='/resetips'>ReseTips</Link> {/* Added the ReseTips link */}
           </li>
           <li className='clock-container'>
             <ClockTime />
