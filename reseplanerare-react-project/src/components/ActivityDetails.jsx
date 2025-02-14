@@ -3,7 +3,13 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
-import './Css/Detalis.css';
+import '../components/Css/ActivityForm.css';
+import '../components/Css/ActivityList.css';
+import '../components/Css/CityImage.css';
+import '../components/Css/Detalis.css';
+import '../components/Css/Footer.css';
+import '../components/Css/Header.css';
+import '../index.css';
 import ImageLocation from './ImageLocation';
 
 function ActivityDetails() {
