@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <ActivityDetails />,
   },
   {
-    path: '/ReseTips',
+    path: '/resetips',
     element: <ReseTips />,
   },
 ]);
