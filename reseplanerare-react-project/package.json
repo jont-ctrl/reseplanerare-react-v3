@@ -29,9 +29,5 @@
     "vite": "^6.0.5"
   },
   {
-  "name": "your-app",
-  "version": "0.1.0",
-  "proxy": "https://serpapi.com"
-}
 
 }

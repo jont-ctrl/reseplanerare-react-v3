@@ -7,8 +7,7 @@ const ActivityForm = lazy(() => import('./components/ActivityForm'));
 const Details = lazy(() => import('./components/Details'));
 const PageNotFound = lazy(() => import('./components/PageNotFound'));
 const ActivityDetails = lazy(() => import('./components/ActivityDetails'));
-import ActivityDetails from './components/ActvitiyDetails';
-import ReseTips from './components/ReseTips';
+const ReseTips = lazy(() => import('./components/ReseTips'));
 
 const router = createBrowserRouter([
   {
@@ -50,7 +49,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/resetips',
-    element: <ReseTips />,
+    element: (
+      <Suspense fallback={<div>Loading ReseTips...</div>}>
+        <ReseTips />
+      </Suspense>
+    ),
   },
 ]);
 

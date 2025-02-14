@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';  
 import Footer from './Footer';  
+import './Css/ActivityForm.css';
+import './Css/ActivityList.css';
+import './Css/CityImage.css';
+import './Css/Detalis.css';
+import './Css/Footer.css';
+import './Css/Header.css';
 import './Css/ReseTips.css';
+import '../index.css'
 
 const ReseTips = () => {
   const [imageData, setImageData] = useState([]);
