@@ -6,6 +6,8 @@ import Header from './Header';
 
 const MemoizedHeader = React.memo(Header);
 const MemoizedActivityList = React.memo(ActivityList);
+import './Css/ActivityForm.css'
+import Footer from './Footer.jsx';
 
 function ActivityForm() {
   const dispatch = useDispatch();
