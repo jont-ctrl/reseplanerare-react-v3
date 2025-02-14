@@ -21,6 +21,14 @@
     width: 100%;
 }
 
+.ReseTipsImg{
+        border-radius: 2rem !important; 
+        width: 400px !important;
+        height: 400px;
+        object-fit: cover; /* image covers the square without stretching */
+
+}
+
 .activity-item {
     display: flex;
     flex-direction: column;
@@ -30,7 +38,7 @@
     margin: 1rem;
     min-width: 250px;
     font-size: 17px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.211);
+    box-shadow: 0px 5px 10px black;box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.211);
     padding: 20px;
     text-align: center;
     overflow: hidden;

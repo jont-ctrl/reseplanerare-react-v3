@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Header from './Header';  // Import the Header component
-import Footer from './Footer';  // Import the Footer component
+import Header from './Header';  
+import Footer from './Footer';  
 import './Css/ReseTips.css';
 
 const ReseTips = () => {
@@ -20,7 +20,7 @@ const ReseTips = () => {
         randomCities.push(randomCity);
       }
     }
-    setCities(randomCities); // Set the random capitals
+    setCities(randomCities); 
   };
 
   const fetchImages = async () => {
@@ -47,7 +47,7 @@ const ReseTips = () => {
         }
       }
 
-      setImageData(allImages); // Set all images in state
+      setImageData(allImages); 
     } catch (error) {
       setError(error.message);
       console.error('Error fetching images:', error);
@@ -74,13 +74,14 @@ const ReseTips = () => {
           <div className="activityList-area">
             {cities.map((city, index) => (
               <div key={index} className="activity-item">
-                <h2>Res till {city}:</h2>
+                <h2>Res till {city}</h2>
                 <div className="randomCat-wrapper">
                   {imageData
                     .filter(image => image.alt.includes(city)) // Filter images by city name
                     .map((image, imageIndex) => (
                       <figure key={imageIndex} className="randomCat-img">
                         <img
+                          className='ReseTipsImg'
                           src={image.src.medium} // Choose the appropriate size (e.g., medium, large, etc.)
                           alt={`Bild från ${city} ${imageIndex + 1}`}
                           style={{ width: '100%', borderRadius: '1rem' }}
