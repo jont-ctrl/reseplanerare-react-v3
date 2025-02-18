@@ -101,7 +101,7 @@ function ActivityForm() {
         />
         <button type='button' onClick={handleRandomCity} className='random-btn'>
           🔄
-        </button>
+        </button> 
         <input
           type='time'
           name='time'
