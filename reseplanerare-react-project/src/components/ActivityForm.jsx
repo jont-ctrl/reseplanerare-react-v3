@@ -1,17 +1,19 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addActivity } from '../redux/travelSlice';
 import ActivityList from './ActivityList';
 import Header from './Header';
+import './Css/ActivityForm.css';
+import Footer from './Footer.jsx';
 
+// Memoize these components outside the ActivityForm component 
+// so they aren’t redefined on every render.
 const MemoizedHeader = React.memo(Header);
 const MemoizedActivityList = React.memo(ActivityList);
-import './Css/ActivityForm.css'
-import Footer from './Footer.jsx';
 
 function ActivityForm() {
   const dispatch = useDispatch();
-  
+
   const [newActivity, setNewActivity] = useState('');
   const [date, setDate] = useState('');
   const [newTime, setNewTime] = useState('');
@@ -29,8 +31,11 @@ function ActivityForm() {
       'Helsingfors', 'Paris', 'New York', 'Tokyo', 'Berlin',
       'London', 'Sydney', 'Dubai', 'Barcelona', 'Rom'
     ];
-    setPlace(randomCityPick[Math.floor(Math.random() * randomCityPick.length)]);
-  }, []);
+    // Compute a random city
+    const randomCity = randomCityPick[Math.floor(Math.random() * randomCityPick.length)];
+    setPlace(randomCity);
+    console.log('Random city selected:', randomCity);
+  }, []); // No dependencies since the array is static and setPlace is stable
 
   // 🟢 Memoized Event Handlers
   const handleActivityChange = useCallback((event) => {
@@ -60,6 +65,7 @@ function ActivityForm() {
       id: Date.now(),
     };
     dispatch(addActivity(newTravelItem));
+    console.log('Activity added:', newTravelItem);
 
     // Reset fields
     setNewActivity('');
@@ -67,6 +73,9 @@ function ActivityForm() {
     setNewTime('');
     setPlace('');
   }, [newActivity, date, newTime, place, dispatch]);
+
+  // For testing, log each render of the ActivityForm component.
+  console.log('ActivityForm rendered');
 
   return (
     <>
@@ -114,8 +123,8 @@ function ActivityForm() {
         </button>
         <p>Antal aktiviteter: {activityAmount}</p>
       </form>
-
       <MemoizedActivityList />
+      <Footer />
     </>
   );
 }
