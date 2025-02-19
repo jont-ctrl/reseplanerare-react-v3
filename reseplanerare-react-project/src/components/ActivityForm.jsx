@@ -6,8 +6,7 @@ import Header from './Header';
 import './Css/ActivityForm.css';
 import Footer from './Footer.jsx';
 
-// Memoize these components outside the ActivityForm component 
-// so they aren’t redefined on every render.
+// Memoized components to prevent unnecessary re-renders
 const MemoizedHeader = React.memo(Header);
 const MemoizedActivityList = React.memo(ActivityList);
 
@@ -21,23 +20,23 @@ function ActivityForm() {
 
   const travel = useSelector((state) => state.travel.activities);
 
-  // 🟢 Use useMemo to optimize activity count calculation
-  const activityAmount = useMemo(() => travel.length, [travel]); 
+  // ✅ UseMemo to optimize activity count calculation
+  const activityAmount = useMemo(() => travel.length, [travel]);
 
-  // 🟢 Memoized Random City Generator
-  const handleRandomCity = useCallback(() => {
+  // ✅ Regular function (no useCallback needed)
+  const handleRandomCity = () => {
+    console.log('Random city button clicked');
     const randomCityPick = [
       'Stockholm', 'Göteborg', 'Malmö', 'Oslo', 'Köpenhamn',
       'Helsingfors', 'Paris', 'New York', 'Tokyo', 'Berlin',
       'London', 'Sydney', 'Dubai', 'Barcelona', 'Rom'
     ];
-    // Compute a random city
     const randomCity = randomCityPick[Math.floor(Math.random() * randomCityPick.length)];
     setPlace(randomCity);
     console.log('Random city selected:', randomCity);
-  }, []); // No dependencies since the array is static and setPlace is stable
+  };
 
-  // 🟢 Memoized Event Handlers
+  // ✅ Memoized event handlers
   const handleActivityChange = useCallback((event) => {
     setNewActivity(event.target.value);
   }, []);
@@ -54,27 +53,28 @@ function ActivityForm() {
     setNewTime(event.target.value);
   }, []);
 
-  // 🟢 Memoized Submit Handler
-  const addActivityHandler = useCallback((event) => {
-    event.preventDefault();
-    const newTravelItem = {
-      activity: newActivity,
-      date,
-      time: newTime,
-      place,
-      id: Date.now(),
-    };
-    dispatch(addActivity(newTravelItem));
-    console.log('Activity added:', newTravelItem);
+  // ✅ Memoized submit handler
+  const addActivityHandler = useCallback(
+    (event) => {
+      event.preventDefault();
+      const newTravelItem = {
+        activity: newActivity,
+        date,
+        time: newTime,
+        place,
+        id: Date.now(),
+      };
+      dispatch(addActivity(newTravelItem));
 
-    // Reset fields
-    setNewActivity('');
-    setDate('');
-    setNewTime('');
-    setPlace('');
-  }, [newActivity, date, newTime, place, dispatch]);
+      // Reset fields
+      setNewActivity('');
+      setDate('');
+      setNewTime('');
+      setPlace('');
+    },
+    [newActivity, date, newTime, place, dispatch]
+  );
 
-  // For testing, log each render of the ActivityForm component.
   console.log('ActivityForm rendered');
 
   return (
@@ -129,4 +129,4 @@ function ActivityForm() {
   );
 }
 
-export default React.memo(ActivityForm);
+export default ActivityForm;
