@@ -1,0 +1,90 @@
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.activity-title {
+    font-size: 32px;
+    color: rgb(246, 246, 238);
+    font-weight: bold;
+    text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.54);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.activityList-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ReseTipsImg{
+        border-radius: 2rem !important; 
+        width: 400px !important;
+        height: 400px;
+        object-fit: cover; /* image covers the square without stretching */
+
+}
+
+
+
+.activity-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+    border-radius: 2rem;
+    margin: 1rem;
+    min-width: 250px;
+    font-size: 17px;
+    box-shadow: 0px 5px 10px black;box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.211);
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.randomCat-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 100%;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+
+.randomCat-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+h2{
+    color: rgb(102, 89, 81);
+}
+
+@media (max-width: 480px) {
+    .ReseTipsImg {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+@media (max-width: 768px) {
+    .randomCat-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .randomCat-img {
+        width: 100%;
+        height: 180px;
+    }
+}

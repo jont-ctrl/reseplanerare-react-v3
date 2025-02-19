@@ -22,7 +22,7 @@ function ActivityForm() {
   const travel = useSelector((state) => state.travel.activities);
 
   // 🟢 Use useMemo to optimize activity count calculation
-  const activityAmount = useMemo(() => travel.length, [travel]);
+  const activityAmount = useMemo(() => travel.length, [travel]); 
 
   // 🟢 Memoized Random City Generator
   const handleRandomCity = useCallback(() => {
