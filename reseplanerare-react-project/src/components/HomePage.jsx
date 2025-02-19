@@ -1,7 +1,17 @@
 import Header from './Header';
 import { useSelector } from 'react-redux';
 import ActivityList from './ActivityList';
-import Footer from './Footer'
+import Footer from './Footer';
+import '../components/Css/Detalis.css';
+import '../components/Css/ActivityList.css';
+import '../index.css';
+import './Css/ActivityForm.css';
+import './Css/ActivityList.css';
+import './Css/CityImage.css';
+import './Css/Detalis.css';
+import './Css/Footer.css';
+import './Css/Header.css';
+import './Css/ReseTips.css';
 
 function HomePage() {
   const travel = useSelector((state) => state.travel.activities);

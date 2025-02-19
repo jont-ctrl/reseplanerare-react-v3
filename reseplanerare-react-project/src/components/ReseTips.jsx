@@ -93,7 +93,7 @@ const ReseTips = () => {
           <div className='resetips-area'>
             {cities.map((city, index) => (
               <div key={index} className='resetips-item'>
-                <h2>Res till {city}</h2>
+                <h2 className='resetips-header'>Res till {city}</h2>
                 <div className='resetips-city-photos'>
                   {imageData
                     .filter((image) => image.alt.includes(city)) // Filter images by city name
