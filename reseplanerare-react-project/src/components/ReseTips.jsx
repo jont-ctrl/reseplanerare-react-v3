@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Header from './Header';  
-import Footer from './Footer';  
+import Header from './Header';
+import Footer from './Footer';
 import './Css/ActivityForm.css';
 import './Css/ActivityList.css';
 import './Css/CityImage.css';
@@ -8,7 +8,7 @@ import './Css/Detalis.css';
 import './Css/Footer.css';
 import './Css/Header.css';
 import './Css/ReseTips.css';
-import '../index.css'
+import '../index.css';
 
 const ReseTips = () => {
   const [imageData, setImageData] = useState([]);
@@ -16,7 +16,16 @@ const ReseTips = () => {
   const [cities, setCities] = useState([]);
 
   const capitals = [
-    "Paris", "London", "Tokyo", "Rome", "Berlin", "Madrid", "Copenhagen", "Stockholm", "Oslo", "Washington DC"
+    'Paris',
+    'London',
+    'Tokyo',
+    'Rome',
+    'Berlin',
+    'Madrid',
+    'Copenhagen',
+    'Stockholm',
+    'Oslo',
+    'Washington DC',
   ];
 
   const getRandomCapitals = (num = 3) => {
@@ -27,7 +36,7 @@ const ReseTips = () => {
         randomCities.push(randomCity);
       }
     }
-    setCities(randomCities); 
+    setCities(randomCities);
   };
 
   const fetchImages = async () => {
@@ -40,7 +49,8 @@ const ReseTips = () => {
         const response = await fetch(url, {
           method: 'GET',
           headers: {
-            Authorization: '5J8APYk7giUDKXDxjLxXeFEGJMbHVDrjqdn4s5Y7nve0M3BUMy4Ux5Vv',
+            Authorization:
+              '5J8APYk7giUDKXDxjLxXeFEGJMbHVDrjqdn4s5Y7nve0M3BUMy4Ux5Vv',
           },
         });
 
@@ -54,7 +64,7 @@ const ReseTips = () => {
         }
       }
 
-      setImageData(allImages); 
+      setImageData(allImages);
     } catch (error) {
       setError(error.message);
       console.error('Error fetching images:', error);
@@ -74,26 +84,30 @@ const ReseTips = () => {
   return (
     <>
       <Header /> {/* Include Header component */}
-      <div className="activity-list">
-        <h1 className="activity-title">ReseTips - Exempel på populära resmål</h1>
+      <div className='resetips-list'>
+        <h1 className='resetips-title'>
+          ReseTips - Exempel på populära resmål
+        </h1>
         {error && <p style={{ color: 'red' }}>Fel: {error}</p>}
         {imageData.length > 0 ? (
-          <div className="activityList-area">
+          <div className='resetips-area'>
             {cities.map((city, index) => (
-              <div key={index} className="activity-item">
+              <div key={index} className='resetips-item'>
                 <h2>Res till {city}</h2>
-                <div className="randomCat-wrapper">
+                <div className='resetips-city-photos'>
                   {imageData
-                    .filter(image => image.alt.includes(city)) // Filter images by city name
+                    .filter((image) => image.alt.includes(city)) // Filter images by city name
                     .map((image, imageIndex) => (
-                      <figure key={imageIndex} className="randomCat-img">
+                      <figure key={imageIndex} className='resetips-city-img'>
                         <img
-                          className='ReseTipsImg'
-                          src={image.src.medium} // Choose the appropriate size (e.g., medium, large, etc.)
+                          className='ReseTips-Img-new'
+                          src={image.src.large} // Choose the appropriate size (e.g., medium, large, etc.)
                           alt={`Bild från ${city} ${imageIndex + 1}`}
                           style={{ width: '100%', borderRadius: '1rem' }}
                         />
-                        <figcaption>Bild från {city} {imageIndex + 1}</figcaption>
+                        <figcaption className='img-city-text'>
+                          Bild från {city} {imageIndex + 1}
+                        </figcaption>
                       </figure>
                     ))}
                 </div>
