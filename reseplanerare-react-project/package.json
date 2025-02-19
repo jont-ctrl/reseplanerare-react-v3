@@ -1,4 +1,3 @@
-
 {
   "name": "reseplanerare-react-project",
   "private": true,
@@ -29,5 +28,4 @@
     "globals": "^15.14.0",
     "vite": "^6.0.5"
   }
-
 }

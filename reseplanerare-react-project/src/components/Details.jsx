@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -26,6 +25,7 @@ function Details() {
       <main>
         <h2>Detaljer</h2>
 
+        {/* Added SearchBar to allow filtering of activities */}
         <SearchBar data={travel} onSearch={setFilteredActivities} />
 
         <div className='activity-details-site'>
@@ -40,7 +40,7 @@ function Details() {
               </div>
             ))
           ) : (
-            <p>Inga aktiviteter matchade din sökning.</p>
+            <p>Inga aktiviteter hittades.</p>
           )}
         </div>
       </main>
