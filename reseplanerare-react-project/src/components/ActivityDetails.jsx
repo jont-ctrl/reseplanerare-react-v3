@@ -11,6 +11,7 @@ import '../components/Css/Footer.css';
 import '../components/Css/Header.css';
 import '../index.css';
 import ImageLocation from './ImageLocation';
+import LocationMap from './LocationMap';
 
 function ActivityDetails() {
   const { activityID } = useParams();
@@ -32,6 +33,7 @@ function ActivityDetails() {
         <p>📅 {travel.date}</p>
         <p>🕒 {travel.time}</p>
         <Link to='/details'>Gå Tillbaka</Link>
+        <LocationMap travel={travel.place} />
       </div>
       <Footer />
     </>
