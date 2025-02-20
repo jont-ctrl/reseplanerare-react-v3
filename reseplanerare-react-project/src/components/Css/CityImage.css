@@ -1,0 +1,15 @@
+.city-photo {
+  border-radius: 2rem;
+  /* width: 100%; */
+
+  width: 400px;
+  height: 400px;
+  object-fit: cover; /* image covers the square without stretching */
+}
+
+@media (max-width: 480px) {
+  .city-photo {
+    width: 300px;
+    height: 300px;
+  }
+}

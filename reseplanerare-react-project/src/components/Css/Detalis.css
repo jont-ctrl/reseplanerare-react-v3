@@ -1,0 +1,85 @@
+.activity-full-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 2rem;
+    margin: 3rem auto;
+    max-width: 500px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.211);
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .activity-full-details h4 {
+    font-size: 0.8rem;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  .activity-full-details h5 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    background-color: rgb(174, 160, 143);
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .activity-full-details p {
+    font-size: 19px;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .activity-full-details a {
+    border: none;
+    background-color: black;
+    color: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+    width: 50%;
+    font-size: 17px;
+    text-decoration: none;
+  }
+  
+  .activity-full-details a:hover {
+    background-color: hsl(0, 0%, 10%);
+    transform: scale(1.05);
+  }
+
+  .read-more-link {
+    border: none;
+    background-color: black;
+    color: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+    width: 50%;
+    font-size: 17px;
+    text-align: center;
+  }
+  
+  .read-more-link:hover {
+    background-color: hsl(0, 0%, 10%);
+    transform: scale(1.05);
+  }
+  
+  
+  @media (max-width: 600px) {
+    .activity-full-details {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  }
