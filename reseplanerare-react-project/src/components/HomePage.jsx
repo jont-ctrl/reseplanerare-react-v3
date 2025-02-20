@@ -26,7 +26,7 @@ function HomePage() {
             <>
               <div className='activity-item-homepage' key={trav.id}>
                 <h3>{trav.activity}</h3>
-                <p>{trav.place}</p>
+                <p>🗺️ {trav.place}</p>
               </div>
             </>
           );
